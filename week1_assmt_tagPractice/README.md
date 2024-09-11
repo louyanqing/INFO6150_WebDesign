@@ -1,7 +1,5 @@
 ### This project is to create a website to practice the following HTML tags.
 
-#### You can check the file 
-
 - Favicon
 - Table
 - Form
