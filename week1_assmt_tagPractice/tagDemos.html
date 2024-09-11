@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My note book</title>
+        <link rel="icon" type="image/x-icon" href="images/nu_icon.ico">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    
+        <!-- include:
+Favicon
+Table
+Form
+Images
+Hyperlink
+Button
+audio
+video
+header
+footer
+summary
+menu
+tel for contact information
+mailto for contact information
+        
+        -->
+    <body>
+        <div class="content_wrapper">
+            <header><h1>Elements' Demos</h1></header>
+            <main>
+                <!-- Button -->
+                <section class="tag_section" id="demo_button">
+                    <h2>Button:&nbsp;<span class="">&lt;button&gt;</span></h2>
+                    <p>Quick Find Me:</p>
+                    <div>
+                        <button type="button"><a href="#demo_favicon">Favicon</a></button>
+                        <button type="button"><a href="#demo_table">Table</a></button>
+                        <button type="button"><a href="#demo_form">Form</a></button>
+                        <button type="button"><a href="#demo_image">Images</a></button>
+                        <button type="button"><a href="#demo_hyperlink">Hyperlink</a></button>
+                        <button type="button"><a href="#demo_button">Button</a></button>
+                        <button type="button"><a href="#demo_audio">Audio</a></button>
+                        <button type="button"><a href="#demo_video">Video</a></button>
+                        <button type="button"><a href="#demo_header">Header</a></button>
+                        <button type="button"><a href="#demo_footer">Footer</a></button>
+                        <button type="button"><a href="#demo_summary">Summary</a></button>
+                        <button type="button"><a href="#demo_menu">Menu</a></button>
+                        <button type="button"><a href="#demo_tel">Tel</a></button>
+                        <button type="button"><a href="#demo_mailto">Mailto</a></button>
+                    </div>
+                </section>
+                <!-- Favicon -->
+                <section>
+                    <div class="tag_section _sizeArticle" id="demo_favicon">
+                        <h2>Favicon:</h2>
+                        <p>You can see me in the title of this web page!</p>
+                    </div>
+                </section>
+                <!-- Table -->
+                <section class="tag_section" id="demo_table">
+                    <h2>Table:&nbsp;<span class="">&lt;table&gt;</span></h2>
+                    <p>Students Info</p>
+                    <div class="tag_table">
+                        <table>
+                            <tr>
+                                <th>Person</th>
+                                <th>ID</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>Dan</td>
+                                <td>1011145</td>
+                                <td>Male</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>Luca</td>
+                                <td>1011220</td>
+                                <td>Male</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>Marry</td>
+                                <td>1011170</td>
+                                <td>Female</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>Lucy</td>
+                                <td>1013170</td>
+                                <td>Female</td>
+                                <td>19</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <!-- Form -->
+                <section class="tag_section" id="demo_form">
+                    <h2>Form:&nbsp;<span class="">&lt;form&gt;</span></h2>
+                    <p>Persnoal Information</p>
+                    <form action="#" method="post">
+                        <div>
+                            <label for="user_name">Name:</label>
+                            <input type="text" id="user_name" name="">
+                        </div>
+                        <div>
+                            <label for="user_phone">Tel:</label>
+                            <input type="tel" id="user_phone" name="">
+                        </div> 
+                        <div>
+                            <label for="user_email">Email:</label>
+                            <input type="email" id="user_email" name="">
+                        </div>   
+                        <div>
+                            <label for="user_password">Password:</label>
+                            <input type="password" id="user_password" name="">
+                        </div>  
+                        <div>
+                            <label for="msg">Notes:</label>
+                            <textarea id="msg" ></textarea>
+                        </div>   
+                        <div>
+                            <button type="submit" id="submit">Submit</button>
+                        </div>
+                    </form>
+                </section>
+                <!-- Img -->
+                <section class="tag_section" id="demo_image">
+                    <h2>Images:&nbsp;<span class="">&lt;img&gt;</span></h2>
+                    <p>Choose your favorite background images</p>
+                    <ul>
+                        <li>
+                            <img src="images/bg1.png" width="100" height="100"/>
+                            <p>
+                                <input type="checkbox" id="spring" />
+                                <label for="spring">Spring</label>
+                            </p>
+                        </li> 
+                        <li>
+                            <img src="images/bg2.png" width="100" height="100">
+                            <p>
+                                <input type="checkbox" id="summer"/>
+                                <label for="summer">Summer</label>
+                            </p>
+                        </li>
+                        <li>
+                            <img src="images/bg3.png" width="100" height="100"/>
+                            <p>
+                                <input type="checkbox" id="fall"/>
+                                <label for="fall">Fall</label>
+                            </p>
+                        </li>
+                        <li>
+                            <img src="images/bg4.png" width="100" height="100"/>
+                            <p>
+                                <input type="checkbox" id="winter"/>
+                                <label for="winter">Winter</label>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+                <!-- Hyperlink -->
+                <section class="tag_section" id="demo_hyperlink">
+                    <h2>Hyperlink:&nbsp;<span class="">&lt;a&gt;</span></h2>
+                    <div class="textCenter"><span>Here is a link&nbsp;</span><a href="#">Back to Top</a></div>
+                </section>
+                <!-- Audio -->
+                <section class="tag_section" id="demo_audio">
+                    <h2>Audio:&nbsp;<span class="">&lt;audio&gt;</span></h2>
+                    <div class="textCenter">
+                        <figure>
+                            <figcaption>Listen to a Song:</figcaption>
+                            <audio controls><source src="media/abcSong.mp3" type="audio/mpeg"/></audio>
+                        </figure>
+                    </div>
+                </section>
+                <!-- Video -->
+                <section class="tag_section" id="demo_video">
+                    <h2>Video:&nbsp;<span class="">&lt;video&gt;</span></h2>
+                    <div class="textCenter">
+                        <figure>
+                            <figcaption>Little Margo:</figcaption>
+                            <video controls width="250"><source src="media/littleMargo.mov" type="video/mp4"/></video>
+                        </figure>
+                    </div>
+                </section>
+                <!-- Header -->
+                <section class="tag_section" id="demo_header">
+                    <h2>Header:&nbsp;<span class="">&lt;header&gt;</span></h2>
+                    <div>
+                        <p class="_sizeArticle">Header with H1-H6:</p>
+                        <div class="_header1">
+                            <header><h2>This is a Title1</h2><p>Here is the content related to title1.</p></header>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="_sizeArticle">Header with nav:</p>
+                        <div class="_header2">
+                            <header>
+                                <h3>This is a Title2</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#demo_audio">Audio Demo</a></li>
+                                        <li><a href="#demo_video">Video Demo</a></li>
+                                        <li><a href="#demo_table">Table Demo</a></li>
+                                    </ul>
+                                </nav>
+                            </header>
+                        </div>
+                    </div>
+                    
+                </section>
+                <!-- footer -->
+                <section class="tag_section" id="demo_footer">
+                    <h2>Footer:&nbsp;<span class="">&lt;footer&gt;</span></h2>
+                    <p class="_sizeArticle">Here is a footer tag example:</p>
+                    <footer>
+                        <small><i>Copyright &copy; 2024 the Fantasy Kitchen.net</i></small>
+                    </footer>
+                </section>
+                <!-- Summary -->
+                <section class="tag_section" id="demo_summary">
+                    <h2>Summary:&nbsp;<span class="">&lt;summary&gt;</span></h2>
+                    <div class="textCenter">
+                        <details open>
+                            <summary>Overview of Boston</summary>
+                            <ol>
+                                <li>Population:&nbsp;<i>675,647</i></li>
+                                <li>Area:&nbsp;<i>89.61 sq mi (232.10 km2)</i></li>
+                                <li>GDP:&nbsp;<i>$571.6 billion</i></li>
+                            </ol>
+                        </detail>
+                    </div>
+                </section>
+                <!-- menu -->
+                <section class="tag_section" id="demo_menu">
+                    <h2>Menu:&nbsp;<span class="">&lt;menu&gt;</span></h2>
+                    <p class="_sizeArticle">The menu is similar to an ordered list (ol) or unordered list (ul), but with a special meaning. Here is an example:</p>
+                    <menu>
+                        <li><button type="button" onclick="">Copy</button></li>
+                        <li><button type="button" onclick="">Cut</button></li>
+                        <li><button type="button" onclick="">Past</button></li>
+                    </menu>
+                </section>
+                <!-- tel for contact information -->
+                <section class="tag_section" id="demo_tel">
+                    <h2>Tel for contact information:</h2>
+                    <div class="_sizeArticle">
+                        <p>To create a link to call a telephone number:</p>
+                        <span>&lt;a href="tel:+phonenumber"&gt;</span>
+                        <p class="_italics">Try the link below:</p>
+                    </div>
+                    <p><span>call&nbsp;&nbsp;</span><a href="tel:+5622256710">+5622256710</a></p>
+                </section>
+                <!-- mailto for contact information -->
+                 <section class="tag_section" id="demo_mailto">
+                    <h2>Mailto for contact information:</h2>
+                    <div class="_sizeArticle">
+                        <p>To create a link to send a new email:</p>
+                        <span>&lt;a href="mailto:someone@example.com"&gt;</span>
+                        <p class="_italics">Try the link below:</p>
+                    </div>
+                    <p><a href="mailto:someone@example.com">send email</a></p>
+                </section>
+            </main>
+        </div>
+    </body>
+    <footer>
+        <div class="textCenter" style="padding:5px;">
+            <small><i>Copyright &copy; 2024 Web Design Notes</i></small>
+        </div>
+    </footer>
+</html>
