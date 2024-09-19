@@ -1,32 +1,330 @@
-body{
-   width: 100%; 
-
-}
-header{
-    margin:0;
-    width:100%;
-    height:100%;
-}
-.page-header{
-    
-    width: 80%;
-    background-color: #b7efad;
-    margin:0 auto;
-    height: 70px;
-    
+.wrapper{
+   width:80%;
+   height: 100%;
+   margin:0 auto;
+   /* background-color: aliceblue; */
+   background-color: rgb(223, 237, 238);
+   padding: 20px;
 }
 .text-center{
-    text-align: center;
+   text-align: center;
 }
-.font-color-header{
-    color: rgb(99, 86, 86);  
+.page-header{
+   /* background-color: #9c9f83; */
+   background-color:cadetblue;
+   margin-bottom: 20px;
+   padding:16px 16px;
+   letter-spacing: 0.1em;
 }
-.font-style-header{
-    letter-spacing: 0.1em;
-    /* font-family: ; */
+h1{
+color: #EAEAEA;
 }
-.page-header>header{
-    font-size:16px;
+h2,h3,h4{
+   color:#44474b;
+}
+.left-side{
+   margin-right: 20px;
+}
+.right-side{
+   overflow:auto;
+}
+.float-left{
+   float: left;
+}
+#pageBody{
+   overflow:hidden;
+}
+#profile>img{
+   width: 100px;
+   height: 100px;
+}
+/* remove default style */
+ul,ol,button,h1,h2,h3,h4,p{
+   margin: 0;
+   padding: 0;
+}
+ul,ol{
+   list-style-type: none;
+}
+a{
+   text-decoration: none;
+   display: block;
+}
+/* li: lines arranged horizontally */
 
-    line-height: 70px;
+#profile li{
+   float: left;
+   margin: 5px 3px;
+}
+.clearfix::after,.clearfix::before{
+   content:"";
+   display: table;
+}
+.clearfix::after{
+   clear: both;
+}
+#profile li a {
+   padding: 8px 8px;
+   font-size: 0;
+   color: cadetblue;
+}
+#profile li a:hover{
+   color: aqua;
+}
+#profile ul{
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+/* profile */
+#profile{
+   background-color: #fff;
+   padding: 15px 15px;
+}
+#profile img, #profile ul{
+   display: block;
+   margin:auto;
+}
+#profile div:nth-child(2){
+   padding-bottom: 10px;
+   padding-top: 10px;
+}
+#profile h3{
+   margin-bottom: 8px;
+   font-size: 1em;
+}
+
+/* navigation */
+menu{
+   padding-left:0;
+}
+menu li{
+   border-bottom:1px solid #fff;
+}
+menu a{
+   padding: 20px;
+   background-color: cadetblue;
+   border-bottom: 1px soid #fff;
+   font-size: 1.2em; 
+   letter-spacing: 0.1em;
+   text-align: center;
+   font-weight: bold;
+}
+menu a:link{
+   color:#fff;
+}
+menu a:visited{
+   color: #EAEAEA;
+}
+menu a:hover{
+   color: #869DC7;
+   background-color: #EAEAEA;
+}
+
+/* Article */
+.tag_section{
+   padding:25px;
+   margin-bottom: 20px;
+   margin-top: 15px;
+   background-color: #fff;
+}
+#article section:first-child{
+   margin-top:0;
+}
+#article h2{
+   font-size: 1.2em;
+}
+
+/* About me & Education */
+#aboutMe header{
+   margin-bottom: 12px;
+}
+/* Content Font size and color */
+
+p.description,p.major,#aboutMe p,#interests p{
+   color:#44474b;
+   font-size: 1.1rem;
+}
+p.description,#aboutMe p{
+   line-height: 28px;
+}
+#education li:nth-child(1){padding-bottom:15px;}
+p.major{
+   margin-top: 10px;
+   margin-bottom: 6px;
+}
+p.institution{
+   font-size: 0.9em;
+   color:rgba(0, 0, 0, .6);
+   padding-left: 25px;
+}
+p.major{
+   display: inline-block;
+}
+#education ul{
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+/* Skills */
+.detailsContainer{
+   margin:0 auto;
+   margin-top:15px;
+}
+details{
+   padding:10px;
+   color: #44474b;
+}
+summary{
+   margin-bottom: 10px;
+}
+details p{
+   line-height: 25px;
+   background-color: rgb(223, 237, 238);
+   padding:10px;
+}
+/* Certification */
+#certification header{
+   margin-bottom: 20px;
+}
+#certification figcaption{
+   font-size: .8em;
+   color: #44474b;
+   text-align: center;
+   padding-top:5px;
+}
+#certification figure>img{
+   width: 190px;
+   height: 168px;  
+   background-color: #fff;
+   transition: transform 0.5s;
+}
+figure img:hover{
+   transform: scale(1.2);
+
+}
+figure{
+   float:left;
+   width: 190px;
+   padding-bottom: 10px;
+   background-color:#EAEAEA;
+   border: 1px solid #EAEAEA;
+}
+/* Experiences */
+#experiences td,th{
+   font-size: 1em;
+   color: #44474b;
+   padding: 10px 10px;
+}
+th{ color:#EAEAEA}
+#experiences div{
+   margin: 0 auto;
+   margin-top: 40px;
+   margin-bottom:25px;
+   width: 90%;
+}
+table {
+   width: 100%;
+   border-collapse:collapse;
+   border-spacing: 0;
+   text-align: center;
+}
+th{
+   letter-spacing: .1em;
+}
+table tr:nth-child(2n){
+   background-color: rgb(222,222,222);
+}
+table tr:nth-child(2n+1){
+   background-color:rgb(209, 209, 209);
+}
+table tr:first-child{
+   background-color:cadetblue;
+}
+
+/* Interests */
+#audio,#audio p,#video p{
+   margin-bottom: 20px;
+}
+audio,video{
+   margin: 0 auto;
+}
+#interests p{
+   line-height: 28px;
+}
+/* Contact */
+#contact form{
+   text-align: center;
+   width: 350px;
+   margin: 0 auto;
+}
+
+#contact ol>li{
+   padding: 7px;
+}
+input,textarea{
+   border-radius: 0.25rem;
+   padding:6px 12px;
+   display: inline-block;
+   border: 1px solid #888e95 ;
+   width:90%;
+}
+input,textarea:focus{
+   outline-color: cadetblue;
+   
+}
+#submit{
+   padding:10px 0;
+   border: none;
+   border-radius: 0.35rem;
+   width: 98.3%;
+   background-color: cadetblue;
+   color:#EAEAEA;
+   font-weight: bold;
+}
+#contact header,#interests header{
+   margin-bottom: 15px;
+}
+/* footer */
+footer{
+   background-color: cadetblue;
+   color: #EAEAEA;
+   padding:10px 10px
+}
+
+
+/* responsiveness */
+@media only screen and (max-width:768px){
+   body {margin:0;padding: 0;}
+   .wrapper{padding: 0;}
+   #menu{float:none;}
+   aside.left-side{margin:0;}
+   #profile{display: block;}
+   #navigation menu{display: block;}
+   #contact form{width:90%;}
+   #contact form button{width: 95%;}
+   #networkLink li{float: none;display: inline-block;}
+   #networkLink{text-align: center;}
+
+}
+@media only screen and (max-width:365px) {
+   body {margin:0;padding: 0;}
+   .wrapper{padding: 0;background-color:#fff;}
+   #menu{float:none;}
+   aside.left-side{margin:0;}
+   #profile{display: block;}
+   #navigation menu{display: block;}
+   section._removeMargPadd{margin: 0;padding-left: 0;padding-right: 0;}
+   header._addBgc{
+      background-color: cadetblue;
+      color: #EAEAEA;
+   }
+   header._addBgc h2{
+      color: #EAEAEA;
+      padding:10px;
+   }
+   #certification img{width: 100%;}
+   #contact form,#audio audio,#experiences table{width:90%;}
+   #contact form button{width: 102%;}
+
 }
