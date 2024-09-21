@@ -176,16 +176,17 @@ summary{
 #demo_menu p{
     text-align:left;
 }
-#demo_menu button{
+#demo_menu a{
     display:inline-block;
     width:100%;
 }
 menu,nav>ul{
     display:flex;
     list-style:none;
-    padding:0; 
+    padding:8px; 
     flex-flow:row nowrap;
     justify-content:center;
+    background-color: aquamarine;
 }
 menu li,nav>ul>li{
     /* flex-grow:1; */
