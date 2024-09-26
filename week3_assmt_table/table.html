@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Table CheckList</title>
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<!-- Author Info -->
+	<h1 id="authorInfo"></h1>
+	<div id = "container_table">
+	<table id="myTable">
+		<tr class="row">
+			<th></th>
+			<th>STUDENT</th>
+			<th>ADVISOR</th>
+			<th>AWARD<br/>STATUS</th>
+			<th>SEMESTER</th>
+			<th>TYPE</th>
+			<th>BUDGET<br />#</th>
+			<th>PERCENTAGE</th>
+			<th class="action">DELETE</th>
+			<th class="action">EDIT</th>
+		</tr>
+		<tr class ="row">
+			<td><input onclick="selectRow(this)" type="checkbox" /><br /><br /><img onclick ="showDetail(this)" id="r1_img" src="down.png" width="25px" /></td>
+			<td>Student 1</td>
+			<td>Teacher 1</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>12345</td>
+			<td>100%</td>
+			<td><button onclick="removeRow(this)">Delete</button></td>
+			<td><button onclick="edit(this)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea"><td colspan="10">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			Budget Number: <br />
+			Tuition Number: <br />
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+		<!-- <tr bgcolor="orange"> -->
+		<tr class ="row">
+			<td><input onclick="selectRow(this)" type="checkbox" checked/><br /><br /><img onclick="showDetail(this)" src="down.png" width="25px" /></td>
+			<td>Student 2</td>
+			<td>Teacher 2</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>23456</td>
+			<td>100%</td>
+			<td><button onclick="removeRow(this)">Delete</button></td>
+			<td><button onclick="edit(this)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea"><td colspan="10">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			Budget Number: <br />
+			Tuition Number: <br />
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+		<tr  class ="row">
+			<td><input onclick="selectRow(this)" type="checkbox" /><br /><br /><img onclick="showDetail(this)" src="down.png" width="25px" /></td>
+			<td>Student 3</td>
+			<td>Teacher 3</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>34567</td>
+			<td>100%</td>
+			<td><button onclick="removeRow(this)">Delete</button></td>
+			<td><button onclick="edit(this)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea"><td colspan="10">
+			Advisor:<br /><br />
+			Award Details<br />
+			Summer 1-2014(TA)<br />
+			Budget Number: <br />
+			Tuition Number: <br />
+			Comments:<br /><br /><br />
+			Award Status:<br /><br /><br />
+		</td></tr>
+	</table>
+
+	<br /><br />
+	
+	<button id="button">SUBMIT SELECTED AWARDS</button>
+	<button id="add" onclick="addStudent(this)">Add New Student</button>
+	</div>
+
+	<!-- EDIT POP UP MODAL -->
+	 <div id="editModal" class="modal">
+		<div class="modal-content">
+			<h4></h4>
+			<div class="text"></div>
+			<div class="clearfix">
+				<button onclick="cancel(this)">Cancel</button>
+				<button onclick="update(this)">Update</button>	
+			</div>
+		</div>	
+	 </div>
+
+	<nav class="socialmediaicons"></nav>
+	<script src="script.js"></script>
+	<script src="table.js"></script>
+	
+</body>
+</html>

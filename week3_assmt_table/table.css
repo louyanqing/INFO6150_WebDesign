@@ -1,0 +1,83 @@
+body{
+	overflow: scroll;
+	padding:20px 20px 40px 20px;
+}
+.authorInfo{
+	
+	margin:0 auto;
+	text-align: center;
+}
+.modal{
+	display:none;
+	width: 100%;
+	height:100%;
+	display: none; 
+	position:fixed;
+	z-index: 1;
+	top:0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(186, 181, 181, 0.5);
+}
+.modal-content{
+	background-color: white;
+	width:300px;
+	padding:20px;
+}
+.modal h4{
+	text-align: center;
+}
+.clearfix{
+	overflow: hidden;
+}
+#editModal button:nth-child(1){
+	background-color: grey;
+	margin-left:10px;
+	border:1px solid grey;
+	padding:8px 8px;
+	float:right;
+}
+#editModal button:nth-child(2){
+	background-color: yellow;
+	border:1px solid rgb(210, 210, 5);
+	padding:8px 8px;
+	float:right;
+}
+
+#myTable input {
+	margin-left: 5px;
+}
+
+#myTable {
+	border:2px solid green;
+	border-collapse: collapse;
+	margin: 30px 30px 20px 40px;
+}
+#myTable td, th {
+	border:1px solid green;
+	padding: 5px;
+}
+#myTable th {
+	color: #fff;
+	background-color: #a7c942;
+}
+
+#button{
+	color:#fff;
+	background-color: orange;
+	border-radius: 3px;
+	border:2px solid orange;
+	margin-left: 180px;
+}
+
+#button:hover{
+	background-color: darkorange;
+	cursor:pointer;
+}
+
+#button:disabled{
+	background-color:#666;
+	border:1px solid #999;
+	cursor:not-allowed;
+}
