@@ -1,3 +1,6 @@
+
+var totalStudents = 0;
+
 window.onload = function(){
     let authorInfo = document.querySelector('#authorInfo')
     authorInfo.innerHTML = 'Yanqing Lou  002083406'
@@ -6,6 +9,9 @@ window.onload = function(){
     
     // hide delete and edit columns
     let trs = document.querySelectorAll('tr.row')
+    // initialize the value of totalStuents
+    totalStudents = trs.length -1
+
     for(let i = 0; i < trs.length; i++){
         if(trs[i].cells.length === 10 ){
 
@@ -124,10 +130,11 @@ function isCheckedInList(){
 function addStudent(){
     let table = document.querySelector('#myTable')
 
-    let rows = document.querySelectorAll('tr.row')
-    let studentName = rows[rows.length-1].cells[1].innerHTML
+    // let rows = document.querySelectorAll('tr.row')
+    // let studentName = rows[rows.length-1].cells[1].innerHTML
+    //let lastIndex = studentName.split(" ")[1]
 
-    let lastIndex = studentName.split(" ")[1]
+    let lastIndex = totalStudents + 1;
 
     // create tr /tds / innerHTML with input
     let tr = document.createElement('tr')
@@ -137,10 +144,10 @@ function addStudent(){
     td1.innerHTML = '<input onclick="selectRow(this)" type="checkbox" /><br /><br /><img onclick ="showDetail(this)" id="r1_img" src="down.png" width="25px" />'
 
     let td2 = document.createElement('td')
-    td2.innerHTML = "Student " + (parseInt(lastIndex)+1)
+    td2.innerHTML = "Student " + (parseInt(lastIndex))
 
     let td3 = document.createElement('td')
-    td3.innerHTML = "Teacher " + (parseInt(lastIndex)+1)
+    td3.innerHTML = "Teacher " + (parseInt(lastIndex))
 
     let td4 = document.createElement('td')
     td4.innerHTML = 'Approved'
@@ -190,6 +197,7 @@ function addStudent(){
 
     if (isSuccess) {
         alert(`${td2.innerHTML} Record added successfully!`);
+        totalStudents ++
     } else {
         alert("Error: Failed to add record!");
     }
