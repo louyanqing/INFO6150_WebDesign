@@ -8,9 +8,8 @@ const inputs = document.querySelectorAll('.required')// inputs & textarea
 
 // title: radio
 const radios = document.querySelectorAll('input[type="radio"]')// title
-//-----------------------------------
 const checkBoxes = document.querySelectorAll('input[name="source"]')//source
-//----------------------------------
+
 const errorTitle = document.getElementById('error-title');
 const errorSource = document.getElementById('error-source')
 
