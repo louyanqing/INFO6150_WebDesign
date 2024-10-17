@@ -4,18 +4,16 @@
    
 }
 
+@function set-background-right($color1, $color2) {
+    @return linear-gradient(to right, $color1, $color2);
+  }
 
-@mixin set-background-right($color1,$color2) {
+/*@mixin set-background-right($color1,$color2) {
     background:linear-gradient(to right,$color1,$color2);
-   
-}
 
-@for $i from 1 through 6 {
-    .book-row-#{$i} {
-      margin-bottom: 13px; 
-      /* create .row-1, .row-2, ... .row-5 */
-    }
-}
+}*/
+
+
 
 
 

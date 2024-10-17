@@ -5,14 +5,20 @@
     height:35px;
     color:$font-dark-color;
     &:hover{
-        font-weight: $font-weight-bold;
-        border-bottom: 1px solid $linear-blue-1;
-        border-radius:5px;
-        color: white !important;;
-        @include set-background($linear-blue-1,$linear-blue-2);
+        @extend .link-active;
     }
 }
+.link-active{
+    font-weight: $font-weight-bold;
+    border-bottom: 1px solid $linear-blue-1;
+    border-radius:var(--radius-rem-navbar);
+    color: white !important;
+    @include set-background($linear-blue-1,$linear-blue-2);
+}
 
+.active{
+    @extend .link-active;
+}
 .link-primary{
     @extend %a;  
 }

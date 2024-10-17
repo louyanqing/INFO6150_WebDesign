@@ -25,15 +25,9 @@ body {
     margin: 0 auto;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
-    background-color: rgb(235, 242, 250);
-    @include set-background(#d6d6d6, rgb(251, 238, 238));
-
-}
-
-@mixin widthlimit {
-    min-width: 320px;
-    margin: 0 auto;
-
+    // background-color: rgb(235, 242, 250);
+    @include set-background(#f7f6f6, rgb(251, 238, 238));
+   
 }
 
 .container {
@@ -41,17 +35,15 @@ body {
     margin: 0 auto;
     background-color: white;
     padding: 8px 40px;
+    @include respond-to(mobile){
+        width: 100% !important;
+        @include set-background(#f6ebeb, rgb(218, 209, 209));
+    }
 }
 
-.active {
-    font-weight: $font-weight-bold;
-    border-bottom: 1px solid $linear-blue-1;
-    color: white !important;
-    border-radius: 5px;
-    @include set-background($linear-blue-1, $linear-blue-2);
-}
 
-/* home-navbar-flex */
+
+/* home-navbar - flex */
 .section-nav {
     height: $navbar-height;
     display: flex;
@@ -72,7 +64,7 @@ body {
         box-shadow:0 2px 4px rgba(0,0,0,.2);
        
     }*/
-    .search {
+    .space {
         flex: 1;
     }
 
@@ -99,7 +91,7 @@ body {
 
 }
 
-/* local nav */
+/* local nav -flex */
 .local-nav {
     height: 100px;
     list-style: none;
@@ -154,7 +146,7 @@ body {
 }
 
 
-/* display all books */
+/* display all books - felx */
 
 .section-display-all {
     margin-top: 10px;
@@ -164,12 +156,20 @@ body {
         display: flex;
     }
 
+    @for $i from 1 through 6 {
+        .book-row-#{$i} {
+          margin-bottom: 13px; 
+          /* create .row-1, .row-2, ... .row-5 */
+        }
+    }
+    
     .book-items {
         flex: 1;
         flex-direction: column;
         border: 1px solid $font-holder-color;
-        background-color: $light-blue;
-        @include set-background-right(#cbe0ef, hsl(163, 37%, 93%));
+        
+        background: set-background-right(#cbe0ef,hsl(163, 37%, 93%));
+        
         /*border-right:1px solid #fff;*/
         text-align: center;
         max-width: 100%;
@@ -188,7 +188,7 @@ body {
 
 }
 
-/* footer */
+/* footer - grid */
 .footer {
     display: grid;
     grid-template-columns: repeat(3, 80px);

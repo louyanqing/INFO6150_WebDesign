@@ -1,39 +1,15 @@
 :root {
   --light-color: orange;
+  --radius-rem-navbar:5rem;
 }
 
-.book-row-1 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
+/*@mixin set-background-right($color1,$color2) {
+    background:linear-gradient(to right,$color1,$color2);
 
-.book-row-2 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
-
-.book-row-3 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
-
-.book-row-4 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
-
-.book-row-5 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
-
-.book-row-6 {
-  margin-bottom: 13px;
-  /* create .row-1, .row-2, ... .row-5 */
-}
-
+}*/
 :root {
   --light-color: orange;
+  --radius-rem-navbar:5rem;
 }
 
 .link-primary {
@@ -41,10 +17,10 @@
   height: 35px;
   color: #1e1e1e;
 }
-.link-primary:hover {
+.link-active, .active, .link-primary:hover {
   font-weight: 600;
   border-bottom: 1px solid #448ac1;
-  border-radius: 5px;
+  border-radius: var(--radius-rem-navbar);
   color: white !important;
   background: linear-gradient(to bottom, #448ac1, #0e3b5e);
 }
@@ -102,14 +78,6 @@
   color: #666;
 }
 
-@media (max-width: 700px) {
-  body {
-    background-color: rgb(249, 244, 244);
-  }
-  .container {
-    width: 100% !important;
-  }
-}
 .section-display-mylike {
   margin-top: 10px;
   width: 100%;
@@ -162,14 +130,14 @@
 .section-display-mylike img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: fill; /*Stretches the image to fill the area*/
   transition: 0.5s;
   border-radius: 8px;
   border: 1px solid #d6d6d6;
   padding: 8px 8px;
 }
 .section-display-mylike:hover .item img:not(:hover) {
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   opacity: 0.5;
 }
 
@@ -189,8 +157,7 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-  background-color: rgb(235, 242, 250);
-  background: linear-gradient(to bottom, #d6d6d6, rgb(251, 238, 238));
+  background: linear-gradient(to bottom, #f7f6f6, rgb(251, 238, 238));
 }
 
 .container {
@@ -199,16 +166,14 @@ body {
   background-color: white;
   padding: 8px 40px;
 }
-
-.active {
-  font-weight: 600;
-  border-bottom: 1px solid #448ac1;
-  color: white !important;
-  border-radius: 5px;
-  background: linear-gradient(to bottom, #448ac1, #0e3b5e);
+@media (max-width: 780px) {
+  .container {
+    width: 100% !important;
+    background: linear-gradient(to bottom, #f6ebeb, rgb(218, 209, 209));
+  }
 }
 
-/* home-navbar-flex */
+/* home-navbar - flex */
 .section-nav {
   height: 48px;
   display: flex;
@@ -229,7 +194,7 @@ body {
 
   }*/
 }
-.section-nav .search {
+.section-nav .space {
   flex: 1;
 }
 .section-nav .item {
@@ -249,7 +214,7 @@ body {
   line-height: 31px !important;
 }
 
-/* local nav */
+/* local nav -flex */
 .local-nav {
   height: 100px;
   list-style: none;
@@ -314,7 +279,7 @@ body {
   background-size: contain;
 }
 
-/* display all books */
+/* display all books - felx */
 .section-display-all {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -322,11 +287,34 @@ body {
 .section-display-all [class^=book-row] {
   display: flex;
 }
+.section-display-all .book-row-1 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
+.section-display-all .book-row-2 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
+.section-display-all .book-row-3 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
+.section-display-all .book-row-4 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
+.section-display-all .book-row-5 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
+.section-display-all .book-row-6 {
+  margin-bottom: 13px;
+  /* create .row-1, .row-2, ... .row-5 */
+}
 .section-display-all .book-items {
   flex: 1;
   flex-direction: column;
   border: 1px solid #666;
-  background-color: rgb(235, 242, 250);
   background: linear-gradient(to right, #cbe0ef, hsl(163, 37%, 93%));
   /*border-right:1px solid #fff;*/
   text-align: center;
@@ -341,7 +329,7 @@ body {
   margin: auto 15px;
 }
 
-/* footer */
+/* footer - grid */
 .footer {
   display: grid;
   grid-template-columns: repeat(3, 80px);
