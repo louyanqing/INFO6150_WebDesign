@@ -66,6 +66,14 @@ body {
     }*/
     .space {
         flex: 1;
+        color:$font-holder-color;
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+        text-align: center;
+        &:hover{
+            color:var(--light-color);
+            cursor: pointer;
+        }
     }
 
     .item {
@@ -73,6 +81,9 @@ body {
         height: 35px;
         line-height: 35px;
         text-align: center;
+        @include respond-to(mobile){
+            width: 20%;
+        }
 
     }
 

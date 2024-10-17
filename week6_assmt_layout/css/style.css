@@ -196,12 +196,25 @@ body {
 }
 .section-nav .space {
   flex: 1;
+  color: #666;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.section-nav .space:hover {
+  color: var(--light-color);
+  cursor: pointer;
 }
 .section-nav .item {
   width: 120px;
   height: 35px;
   line-height: 35px;
   text-align: center;
+}
+@media (max-width: 780px) {
+  .section-nav .item {
+    width: 20%;
+  }
 }
 .section-nav .item:nth-child(2) {
   margin: auto 8px;
