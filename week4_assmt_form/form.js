@@ -198,6 +198,7 @@ form.addEventListener('submit', function (event) {
 
     // Create table to display form data
     let table = document.createElement('table')
+    let customization = document.getElementById('customization')
 
     table.innerHTML = `
         <tr><td>Title:</d><td>${selectedRadio}</td></tr>
@@ -214,10 +215,10 @@ form.addEventListener('submit', function (event) {
         <tr><td>Drinks:</d><td>${selectedDrink}</td></tr>
         `
         
-    if(hasExtra){
+    if(hasExtra && customization){
         table.innerHTML += `
         <tr><td>${labelCheckbox.textContent}:</d><td>Yes</td></tr>
-        <tr><td>Any additional customizations:</d><td>${document.getElementById('customization').value}</td></tr>
+        <tr><td>Any additional customizations:</d><td>${customization.value}</td></tr>
         <tr><td>Comments:</td><td>${document.getElementById('comments').value}</td></tr>
         `
     }else{

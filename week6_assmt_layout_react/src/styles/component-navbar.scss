@@ -1,0 +1,54 @@
+@import './base';
+
+.navbar{
+    padding-left:80px !important;
+    padding-right:80px !important;
+    background-color: transparent;
+    
+    .navbar-brand{
+        color: $grey-medium;
+        font-weight: $font-brand;
+        &:hover{
+            color: $color-hover;
+            font-weight: 600;
+        }
+    }
+
+    .navbar-nav {
+        margin-left: auto; /* Ensure menu items are right-aligned */
+
+        .nav-item{
+            margin-left:10px;
+
+            .nav-link{
+                @extend %font;
+            }
+
+            &:hover{
+                .nav-link {
+                    color: $color-hover;
+                }              
+            }
+
+            button{
+                padding:2px 20px 3px 20px;
+                margin-top:3px;
+                font-weight: bold;
+                border-color: $grey-dark;
+                @extend %font;
+                &:hover{
+                    border-color: white;
+                    color:$color-hover;
+                    background-color:$grey-dark;
+                }
+            }
+        }
+          
+    }
+
+}
+
+
+%font{
+    color: $grey-dark;
+}
