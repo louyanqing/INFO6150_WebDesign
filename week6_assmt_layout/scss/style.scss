@@ -1,4 +1,4 @@
-@import 'normalize';
+
 @import 'base';
 @import 'config';
 @import 'default';
@@ -135,35 +135,25 @@ body {
         margin-top: 8px; 
         margin-bottom: 10px; 
     }
+    .icon1 {background: url("../images/icon1.png") no-repeat center;}
+    
+    .icon2 {background: url("../images/icon2.png") no-repeat center;}
+    
+    .icon3 {background: url("../images/icon3.png") no-repeat center;}
+    
+    .icon4 {background: url("../images/icon4.png") no-repeat center; }
+    
+    .icon5 {background: url("../images/icon5.png") no-repeat center;}
+
+    @for $i from 1 through 5 {
+        .icon#{$i} {    
+            background-size: contain;
+        }
+    }   
+
 }
 
 
-
-
-.icon1 {
-    background: url("../images/books/arts.png") no-repeat center;
-    background-size: contain;
-}
-
-.icon2 {
-    background: url("../images/books/science.png") no-repeat center;
-    background-size: contain;
-}
-
-.icon3 {
-    background: url("../images/books/novel.png") no-repeat center;
-    background-size: contain;
-}
-
-.icon4 {
-    background: url("../images/books/literature.png") no-repeat center;
-    background-size: contain;
-}
-
-.icon5 {
-    background: url("../images/books/sciencefiction.png") no-repeat center;
-    background-size: contain;
-}
 /* display all books */
 
 .section-display-all {
@@ -186,6 +176,7 @@ body {
         height: auto;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.8);
 
+     
         img:hover {
             transform: scale(1.1);
         }
@@ -204,12 +195,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ddecf6;
-    margin:15px auto;
-    padding:13px auto;
+    margin-top:30px;
+    padding-top:5px;
+    padding-bottom:5px;
 
     a {
         text-align: center;
-        padding: 8px 8px;
+        padding: 12px 12px;
         font-size: 0;
         color: cadetblue;
 
