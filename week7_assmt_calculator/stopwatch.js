@@ -15,6 +15,11 @@ const setCurrentDate = () => {
 };
 setCurrentDate();
 
+// prevent type
+$('#datePicker').on('keydown paste', function(e) {
+    e.preventDefault(); 
+});
+
 // Format time in HH:MM:SS
 const formatTime = (time) => {
     const hours = Math.floor(time / 3600000);
@@ -28,7 +33,8 @@ const formatTime = (time) => {
     const formattedSeconds = String(seconds).padStart(2, '0');
     const formattedMs = String(ms);
 
-    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}.${formattedMs}`;
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+    //return `${formattedHours}:${formattedMinutes}:${formattedSeconds}.${formattedMs}`;
 };
 
 // Update time label asynchronously using async/await and promises
