@@ -103,7 +103,7 @@ const checkInputsValidity = () => {
     return (isEmpty || hasError) ? false : true
 }
 
-function clearForm() {
+const clearForm = () => {
 
     // Disable the login button initially
     $('#submitBtn').prop('disabled', true);
@@ -120,6 +120,13 @@ function clearForm() {
     $('#error-confirmPassword').text('')
 
 }
+
+
+$("#submitBtn").on("click", (event) => {
+    event.preventDefault();
+    localStorage.setItem('username', $('#username').val())
+    window.location.href = "calculator.html"
+});
 
 
 

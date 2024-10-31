@@ -1,12 +1,15 @@
 $(document).ready(function () {
 
   // display username
-  let params = getParams(document.location.search);
-  $('#login-name').html(params['username'])
+  // let params = getParams(document.location.search);
+  // $('#login-name').html(params['username'])
+  const username = localStorage.getItem('username')?localStorage.getItem('username'):'Invalid Name';
+  $('#login-name').html(username)
 
   $('#addButton, #subtractButton, #multiplyButton, #divideButton').prop('disabled', true);
 
-  const regExp = /[!@#$%^&*(),.?":{}|<>]/;
+  //const regExp = /[!@#$%^&*(),.?":{}|<>]/;
+  const regExp = /[^\d.eE+-]/;
 
   const validateNum = (numberField) => {
     let isValid = true;
@@ -14,6 +17,8 @@ $(document).ready(function () {
     // Number validation
     const number = $(`#${numberField}`).val();
     const err = $(`#${numberField}Err`)
+    const parsedNumber = parseFloat(number);
+
     if (!number) {
       err.text("Please enter a number.");
       isValid = false;
@@ -22,6 +27,9 @@ $(document).ready(function () {
       isValid = false;
     } else if (regExp.test(number)) {
       err.text("Special character are not allowed, please enter a valid number.");
+      isValid = false;
+    }else if (!isFinite(parsedNumber)) {
+      err.text("Infinity values are not allowed, please enter a finite number.");
       isValid = false;
     } else {
       err.text("");
@@ -89,11 +97,15 @@ $(document).ready(function () {
     $('#result').val(result);
   };
 
+  const activeState = (elem) => {
+    $(".btn-group button").removeClass("active");
+    $(elem).addClass("active")
+  }
 
-  $('#addButton').on('click', () => calculate('add'));
-  $('#subtractButton').on('click', () => calculate('subtract'));
-  $('#multiplyButton').on('click', () => calculate('multiply'));
-  $('#divideButton').on('click', () => calculate('divide'));
+  $('#addButton').on('click', () => {calculate('add'); activeState('#addButton')});
+  $('#subtractButton').on('click', () => {calculate('subtract'); activeState('#subtractButton')});
+  $('#multiplyButton').on('click', () => {calculate('multiply'); activeState('#multiplyButton')});
+  $('#divideButton').on('click', () => {calculate('divide'); activeState('#divideButton')});
 
   $('#reset').on('click', () => {
     $('#number1').val("")
@@ -102,9 +114,12 @@ $(document).ready(function () {
     $('#number2Err').text("")
     $('#result').val("")
     $('#addButton, #subtractButton, #multiplyButton, #divideButton').prop('disabled', true);
+    $(".btn-group button").removeClass("active");
   })
 
   $("#logout").on("click", () => {
+    localStorage.removeItem("username")
+    window.location.href = "login.html"
 
   });
 

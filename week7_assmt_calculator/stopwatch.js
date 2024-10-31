@@ -56,7 +56,7 @@ const stopwatch = async () => {
     }
 };
 
-// Reset
+// Reset: async && await
 const resetwatch = async () => {
     clearInterval(intervalId);
     elapsedTime = 0;
@@ -64,15 +64,15 @@ const resetwatch = async () => {
     running = false;
 };
 
-// Add event listeners for buttons
-$('#startBtn').on('click', async () => {
-    await startwatch();
+// 
+$('#startBtn').on('click', () => {
+    startwatch();
 });
 
-$("#stopBtn").on('click', async () => {
-    await stopwatch();
+$("#stopBtn").on('click', () => {
+     stopwatch();
 });
 
-$("#resetBtn").on('click', async () => {
-    await resetwatch();
+$("#resetBtn").on('click', () => {
+     resetwatch();    
 });
