@@ -11,34 +11,34 @@ var count = 0;
 const validateFunction = (field, regex, errorMsg, minLength, maxLength) => {
     const errorElement = $('#error-' + field);
     const inputElement = $('#' + field)
-    
+
     // keyup event listener
-    inputElement.keyup( () => {
+    inputElement.keyup(() => {
 
         const value = inputElement.val()
 
-        const isConfirmPassword = (field === 'confirmPassword')? true:false;
+        const isConfirmPassword = (field === 'confirmPassword') ? true : false;
 
         if (isConfirmPassword) {
             count++
-            isCPTouched = count>1;
+            isCPTouched = count > 1;
         }
 
         PassWorChange(field);
 
         if (value.length === 0) {
             errorElement.text(inputElement.data('name') + ' cannot be empty!')
-            if(count<=1){
+            if (count <= 1) {
                 $('#error-confirmPassword').text('')
             }
-            if(isConfirmPassword){
+            if (isConfirmPassword) {
                 errorElement.text('Please confirm the password!')
             }
-    
+
         } else if (value.length < minLength || value.length > maxLength) {
-            if(!isConfirmPassword){
-                errorElement.text(`The length must be between ${minLength} and ${maxLength} characters`) 
-            } else if(isConfirmPassword && value.length !== minLength){
+            if (!isConfirmPassword) {
+                errorElement.text(`The length must be between ${minLength} and ${maxLength} characters`)
+            } else if (isConfirmPassword && value.length !== minLength) {
                 errorElement.text('Passwords do not match!')
             }
 
@@ -46,13 +46,13 @@ const validateFunction = (field, regex, errorMsg, minLength, maxLength) => {
             // If it's confirm password, check if it matches the password field
             errorElement.text('Passwords do not match!')
 
-        }else if (regex && !regex.test(value)) {
+        } else if (regex && !regex.test(value)) {
             errorElement.text(`${errorMsg}`);
 
         } else {
             errorElement.text('')
         }
-        
+
         checkFormValidity()
 
     });
@@ -66,23 +66,23 @@ validateFunction('confirmPassword', null, '', 8, 20);
 
 // Confirm password validation
 const PassWorChange = field => {
-    if(field === 'password'){
+    if (field === 'password') {
         $('#confirmPassword').val('')
         $('#error-confirmPassword').text('')
         count = 0;
 
-    }       
+    }
 }
 
 const checkFormValidity = () => {
     const isValid_inputs = checkInputsValidity()
 
-    if(!isValid_inputs){
+    if (!isValid_inputs) {
         $('#submitBtn').prop('disabled', true)
         $('#submitBtn').removeClass('btn-primary')
-        $('#submitBtn').addClass('disabled-btn')   
+        $('#submitBtn').addClass('disabled-btn')
 
-    }else{
+    } else {
         $('#submitBtn').prop('disabled', false)
         $('#submitBtn').removeClass('disabled-btn')
         $('#submitBtn').addClass('btn-primary')
@@ -94,16 +94,16 @@ const checkInputsValidity = () => {
     const inputs = $('.form-control')
     const errors = $('.error')
 
-    const isEmpty = Array.from(inputs).some(input => $(input).val() == '');  
+    const isEmpty = Array.from(inputs).some(input => $(input).val() == '');
     console.log(isEmpty);
     const hasError = Array.from(errors).some(error => !$(error).is(':empty'));
     console.log(hasError);
 
 
-    return (isEmpty||hasError)? false : true
+    return (isEmpty || hasError) ? false : true
 }
 
-function clearForm(){
+function clearForm() {
 
     // Disable the login button initially
     $('#submitBtn').prop('disabled', true);
@@ -117,7 +117,7 @@ function clearForm(){
     $('#error-username').text('')
     $('#error-email').text('')
     $('#error-password').text('')
-    $('#error-confirmPassword').text('')       
+    $('#error-confirmPassword').text('')
 
 }
 
