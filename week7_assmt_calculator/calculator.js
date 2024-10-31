@@ -50,12 +50,14 @@ $(document).ready(function () {
     clearResult()
     validateNum('number1')
     validInputs()
+    $(".btn-group button").removeClass("active");
   })
 
   $('#number2').on('keyup', () => {
     clearResult()
     validateNum('number2')
     validInputs()
+    $(".btn-group button").removeClass("active");
   })
 
   const validInputs = () => {
