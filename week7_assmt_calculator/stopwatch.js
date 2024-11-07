@@ -39,7 +39,10 @@ const formatTime = (time) => {
 
 // Update time label asynchronously using async/await and promises
 const updateTimeLabel = async () => {
-    timer.html(formatTime(elapsedTime));
+    return new Promise((resolve) => {
+        timer.html(formatTime(elapsedTime));
+        resolve();
+    })
 };
 
 // Start
