@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 
 exports.uploadImage = (req,res) => {
-    const uploadPath = path.join(__dirname, '../files')
+    const uploadPath = path.join(__dirname, '../images')
     console.log(uploadPath)
 
     if (!fs.existsSync(uploadPath)){
