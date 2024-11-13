@@ -5,7 +5,7 @@ import './login.css'
 
 function Login() {
 
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
 
@@ -14,11 +14,11 @@ function Login() {
         e.preventDefault();
 
         try {
-            if (!email || !password) {
-                setMessage('Please enter email and password')
+            if (!username || !password) {
+                setMessage('Please enter username and password')
                 return
             }
-            const response = await loginUser(email, password)
+            const response = await loginUser(username, password)
             if (response.success) {
                 // store JWT token in localStorage
                 localStorage.setItem('token', response.token)
@@ -38,12 +38,12 @@ function Login() {
             <Box component="form" display="flex" flexDirection="column" alignItems="center" mt={4}>
                 <Typography  variant="h5" gutterBottom>Login</Typography>
                 <TextField
-                    label="Email"
+                    label="Username"
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <TextField
                     label="Password"
