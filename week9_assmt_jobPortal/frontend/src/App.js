@@ -55,7 +55,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/companies" element={<CompanyShowcase />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          {/* <Route path="/register" element={<Register />} /> */}
         </Routes>
       </Router>
     </>
