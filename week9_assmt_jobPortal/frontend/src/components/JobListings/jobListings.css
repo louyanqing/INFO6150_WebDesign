@@ -29,13 +29,15 @@
 
 .job-description,
 .job-requirements,
-.job-salary{
+.job-salary,
+.job-lastUpdated{
     margin:5px;
     color:#555;
 }
 
 .job-requirements strong,
-.job-salary strong{
+.job-salary strong,
+.job-lastUpdated strong{
     color:#333;
 }
 

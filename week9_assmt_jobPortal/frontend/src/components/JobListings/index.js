@@ -14,6 +14,7 @@ const JobListings = () => {
                             <p className="job-description">{job.description}</p>
                             <p className="job-requirements"><strong>Requirements:</strong>{job.requirements}</p>
                             <p className="job-salary"><strong>Salary:</strong>{job.salary}</p>
+                            <p className="job-lastUpdated"><strong>LastUpdated:</strong>{job.lastUpdated}</p>
                             <a href={job.applyLink} className="apply-link">Apply Now</a>
                         </li>
                     ))
