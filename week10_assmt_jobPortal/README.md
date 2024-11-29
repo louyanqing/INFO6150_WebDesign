@@ -1,13 +1,13 @@
 # React Project Job Portal with Material UI and Axios
 
 ## Project overview
-This project is a Job Portal built using React, Material UI (optional), and Axios. It aims to provide a user-friendly interface for job seekers to explore job listings and company profiles. The portal includes five key pages: Home, Job Listings, Companies, Contact, and Login. 
+This project is a Job Portal built using React, Material UI (optional), and Axios. It aims to provide a user-friendly interface for job seekers to explore job listings and company profiles. The admin portal includes two pages: Employees and Add Job. The employee portal includes five key pages: Home, Job Listings, Companies, Contact, and Login. 
 
 ## Objective
-- **Login Page**: Create a login page where users can authenticate using predefined emails and passwords from a previous assignment(Express_RESTfulAPI) (no need to create a signup page).
-- **Job Listings**: Dynamically display job postings on the "Job Listings" page, with job roles, descriptions, and salary. The data is fetched from the jobPosts object provided. 
-- **Company Showcase**: Display company profiles with images sourced from a backend server.
-- **Session Management**: Implement login and logout functionality to manage user sessions.
+Extend the Previous Task
+-- Use Redux to Manage All States.
+-- Allow registration of two roles: Admin and Employee.
+-- Differentiate Admin and Employee Functionality.
 
 ## Project Setup
 1. Set Up the Frontend: 
@@ -23,66 +23,100 @@ This project is a Job Portal built using React, Material UI (optional), and Axio
 
 ## Structure
 <pre>
-week10_assmt_jobPortal               
+week10_assmt_jobPortal              
 ├─ backend                          
 │  ├─ controllers                   
-│  │  ├─ authController.js          # Handles authentication-related logic
-│  │  └─ userController.js          # Handles user-related logic
+│  │  ├─ authController.js          
+│  │  ├─ jobController.js           
+│  │  └─ userController.js          
 │  ├─ images                        
-│  │  ├─ amazon.png                # Company logos or images (example)
-│  │  ├─ meta.png                  
-│  │  └─ ...                       
+│  │  ├─ alibaba.png                
+│  │  ├─ amazon.png                 
+│  │  ├─ ...                                     
 │  ├─ models                        
-│  │  ├─ companyModel.js           # Defines the structure of company data
-│  │  └─ userModel.js              # Defines the structure of user data
+│  │  ├─ companyModel.js            
+│  │  ├─ jobModel.js                
+│  │  ├─ jobModel.js~               
+│  │  └─ userModel.js               
 │  ├─ routes                        
-│  │  ├─ authRoutes.js             # Defines routes for authentication
-│  │  ├─ companyRoutes.js          # Defines routes for accessing company data
-│  │  └─ userRoutes.js             # Defines routes for accessing user data
+│  │  ├─ authRoutes.js              
+│  │  ├─ companyRoutes.js           
+│  │  ├─ jobRoutes.js               
+│  │  └─ userRoutes.js              
 │  ├─ services                      
-│  │  └─ authService.js            # Handles the logic for authentication
-│  ├─ package-lock.json            # Defines the exact versions of installed dependencies
-│  ├─ package.json                 # Manages project dependencies and scripts
-│  └─ server.js                    # Entry point for the backend server
+│  │  └─ authService.js             
+│  ├─ package-lock.json             
+│  ├─ package.json                  
+│  └─ server.js                     
 ├─ frontend                         
 │  ├─ public                        
-│  │  └─ index.html                # Main HTML file for the frontend
+│  │  └─ index.html                 
 │  ├─ src                           
 │  │  ├─ components                 
 │  │  │  ├─ About                   
-│  │  │  │  └─ index.js            # About page component
+│  │  │  │  └─ index.js             
 │  │  │  ├─ CompanyShowcase         
-│  │  │  │  ├─ companyShowcase.css # Styles for the company showcase page
-│  │  │  │  └─ index.js            # Company showcase component
+│  │  │  │  ├─ companyShowcase.css  
+│  │  │  │  └─ index.js             
 │  │  │  ├─ Contact                 
-│  │  │  │  ├─ contact.css         # Styles for the contact page
-│  │  │  │  └─ index.js            # Contact page component
+│  │  │  │  ├─ contact.css          
+│  │  │  │  └─ index.js             
+│  │  │  ├─ Employees               
+│  │  │  │  ├─ Employees.css        
+│  │  │  │  └─ index.js             
 │  │  │  ├─ Home                    
-│  │  │  │  └─ index.js            # Home page component
+│  │  │  │  └─ index.js             
+│  │  │  ├─ Job                     
+│  │  │  │  ├─ AddJob.css           
+│  │  │  │  └─ AddJob.js            
 │  │  │  ├─ JobListings             
-│  │  │  │  ├─ index.js            # Job listings component
-│  │  │  │  └─ jobListings.css     # Styles for the job listings page
+│  │  │  │  ├─ index.js             
+│  │  │  │  ├─ jobListings.css      
+│  │  │  │  └─ jobListings.css~     
 │  │  │  ├─ Login                   
-│  │  │  │  ├─ index.js            # Login page component
-│  │  │  │  └─ login.css           # Styles for the login page
+│  │  │  │  ├─ index.js             
+│  │  │  │  └─ login.css            
 │  │  │  ├─ Logout                  
-│  │  │  │  └─ index.js            # Logout page component
-│  │  │  └─ Register                
-│  │  │     ├─ index.js            # Register page component
-│  │  │     └─ register.css        # Styles for the registration page
-│  │  ├─ App.js                     # Main React component that renders all pages
-│  │  ├─ api.js                     # Contains the API calls (using Axios)
-│  │  ├─ index.js                   # Entry point for the frontend app
-│  │  └─ jobPosts.js                # Contains static data for job listings
-│  ├─ package-lock.json             # Defines the exact versions of installed dependencies
-│  └─ package.json                  # Manages project dependencies and scripts
-└─ README.md                        # Documentation file for the project
-  </pre>                     
+│  │  │  │  └─ index.js             
+│  │  │  ├─ Navbar                  
+│  │  │  │  └─ index.js             
+│  │  │  ├─ Register                
+│  │  │  │  ├─ index.js             
+│  │  │  │  └─ register.css         
+│  │  │  └─ ProtectedRoute.js       
+│  │  ├─ store                      
+│  │  │  ├─ actions                 
+│  │  │  │  ├─ employeesActions.js  
+│  │  │  │  ├─ jobActions.js        
+│  │  │  │  └─ userActions.js       
+│  │  │  ├─ reducers                
+│  │  │  │  ├─ employeesReducer.js  
+│  │  │  │  ├─ jobsReducer.js       
+│  │  │  │  └─ userReducer.js       
+│  │  │  └─ store.js                
+│  │  ├─ App.js                     
+│  │  ├─ api.js                     
+│  │  ├─ index.js                   
+│  │  └─ jobPosts.js                
+│  ├─ package-lock.json             
+│  └─ package.json                  
+└─ README.md                        
 
-## Navigation
-The Job Portal app uses React Router for navigation, allowing users to easily switch between different pages of the application. The app's main navigation is provided by a top navigation bar (using Material UI's AppBar), which contains links to the following pages:
+</pre>                     
 
-### Pages & Routes:
+### Register:
+Users can register as one of two roles: Admin or Employee.
+
+### Admin Portal:
+
+1. Employees (/admin/employees)
+Showcase all users in a table format along with their details such as email, name, and type.
+
+2. Add Job (/admin/addjob)
+Add a new job to the database collection.
+
+### Employee Portal
+
 1. Home (/)
 The main landing page of the job portal.
 
@@ -98,7 +132,9 @@ Provides information about the job portal, its purpose.
 5. Contact (/contact)
 A contact page where users can reach out for support or inquiries.
 
-6. Login (/login)
-A login page where users can authenticate to access job listings and other features.
+
+
+
+
 
 
