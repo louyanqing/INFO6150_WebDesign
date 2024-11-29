@@ -85,6 +85,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchJobs } from "../../store/actions/jobActions";
 import './jobListings.css'
+import Navbar from "../Navbar";
 
 const JobListings = () => {
     const dispatch = useDispatch();
@@ -94,9 +95,12 @@ const JobListings = () => {
 
     useEffect(() => {
         dispatch(fetchJobs());
+        console.log(jobs)
     }, [dispatch]);
 
     return (
+        <>
+         <Navbar/>
         <div className="job-listing-container">
             <h1>Available Jobs</h1>
             {loading && <p>Loading...</p>}
@@ -118,6 +122,7 @@ const JobListings = () => {
                 !loading && !error && <p>No jobs available.</p>
             )}
         </div>
+            </>
     );
 };
 

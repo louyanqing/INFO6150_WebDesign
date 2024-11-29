@@ -63,6 +63,7 @@ import React, { useEffect } from "react";
 import "./Employees.css";
 import { useSelector, useDispatch } from "react-redux";
 import {fetchEmployees} from "../../store/actions/employeesActions";
+import Navbar from "../Navbar";
 
 const EmployeesPage = () => {
 
@@ -73,6 +74,8 @@ const EmployeesPage = () => {
     }, [dispatch]);
 
     return (
+        <>
+            <Navbar/>
         <div className="admin-container">
             <h1>Employees</h1>
             {loading && <p>Loading...</p>}
@@ -101,6 +104,7 @@ const EmployeesPage = () => {
                 !error && <p>No users found.</p>
             )}
         </div>
+        </>
     );
 };
 

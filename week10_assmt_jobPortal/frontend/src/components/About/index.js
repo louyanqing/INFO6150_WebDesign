@@ -1,9 +1,12 @@
 // frontend/src/components/About.js
 import React from 'react';
 import { Container, Typography, Box, Card, Grid, CardContent } from '@mui/material'
+import Navbar from "../Navbar";
 
 function About() {
     return (
+        <>
+            <Navbar/>
         <Container>
             <Box textAlign="center" mt={4}>
                 <Typography variant="h2" gutterBottom>About Us</Typography>
@@ -86,6 +89,7 @@ function About() {
                 </Grid>
             </Box>
         </Container>
+            </>
     )
 }
 

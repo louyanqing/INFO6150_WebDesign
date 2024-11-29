@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AddJob.css";
 import {createJob} from "../../api";
+import Navbar from "../Navbar";
 
 const AddJob = () => {
     const [formData, setFormData] = useState({
@@ -50,6 +51,8 @@ const AddJob = () => {
     };
 
     return (
+        <>
+            <Navbar/>
         <div className="add-job-container">
             <h1>Add a New Job</h1>
             <form onSubmit={handleSubmit}>
@@ -123,6 +126,7 @@ const AddJob = () => {
             {feedbackErr && <div className="feedbackErr">{feedbackErr}</div>}
 
         </div>
+            </>
     );
 };
 

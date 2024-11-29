@@ -1,6 +1,7 @@
 // frontend/src/components/
 import React,{ useState, useEffect } from 'react'
-import './companyShowcase.css' /* ./ current directory  ../ parent directory */
+import './companyShowcase.css'
+import Navbar from "../Navbar"; /* ./ current directory  ../ parent directory */
 
 const CompanyShowcase = () => {
 
@@ -20,6 +21,8 @@ const CompanyShowcase = () => {
     })
 
     return(
+        <>
+            <Navbar/>
         <div className="company-showcase-container">
             <h2>Company Showcase</h2>
             <div className="company-gallery">
@@ -37,6 +40,7 @@ const CompanyShowcase = () => {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

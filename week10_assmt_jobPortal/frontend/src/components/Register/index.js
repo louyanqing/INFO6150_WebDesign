@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { registerUser } from '../../api'
 import './register.css'
+import Navbar from "../Navbar";
 
 const Register = () => {
 
@@ -58,7 +59,11 @@ const Register = () => {
     }
     
     return (
+        <>
+        <Navbar/>
         <div className="register-container">
+        {success === "" ? (
+            <>
             <h2>Register</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -80,13 +85,21 @@ const Register = () => {
                 </div>
 
                 {error && <p className="error-message">{error}</p>}
-                {success && <p className="success-message">{success}</p>}
                 <button type="submit">Register</button>
             </form>
             <div style={{ textAlign: 'center' }}>
                 <p>Already have an account? <a href="/login">Login</a></p>
             </div>
+            </>
+        ):(
+        <div style={{ textAlign: 'center' }}>
+            <h3 className="success-message">{success}</h3>   
+                <p>Go to <a href="/login">Login</a></p>
+            </div>
+        )}
+
         </div>
+            </>
     )
 }
 

@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { setUser } from "../../store/actions/userActions";
 
+import Navbar from '../Navbar'
 import { loginUser } from '../../api'
 import { TextField, Button, Typography, Box } from '@mui/material'
 import './login.css'
+import {useNavigate} from "react-router-dom";
+
 
 function Login() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -28,14 +32,17 @@ function Login() {
                 const user = response.user
                 // store JWT token in localStorage
                 localStorage.setItem("token", response.token);
-                localStorage.setItem("userType", user.type);
+                // localStorage.setItem("userType", user.type);
+                // localStorage.setItem("username", user.fullName);
 
-                dispatch(setUser(user.type)) // Save user type in Redux
+                dispatch(setUser(user.type, user.fullName)) // Save user type in Redux
 
                 if(user.type === 'admin'){
-                    window.location.href = '/admin/employees'
+                    console.log('Go to admin page');
+                    navigate('/admin/employees');
                 }else{
-                    window.location.href = '/'
+                    console.log('Go to user page');
+                    navigate('/');
                 }
             } else {
                 setMessage('Login failed: ' + response.message)
@@ -46,6 +53,8 @@ function Login() {
     }
 
     return (
+        <>
+        <Navbar />
         <div className="login-container">
             <Box component="form" display="flex" flexDirection="column" alignItems="center" mt={4}>
                 <Typography  variant="h5" gutterBottom>Login</Typography>
@@ -81,6 +90,7 @@ function Login() {
 
             </Box>
         </div>
+        </>
     )
 }
 

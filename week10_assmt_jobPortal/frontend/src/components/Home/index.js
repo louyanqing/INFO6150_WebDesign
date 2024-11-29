@@ -1,10 +1,14 @@
 import React from 'react'
 import { Box, Button, Typography, Container, Grid, Card, CardContent } from '@mui/material'
 import { Link } from 'react-router-dom'
+import Navbar from "../Navbar";
 
 function Home() {
     return (
+        <>
+            <Navbar/>
         <Container>
+
             <Box textAlign="center" mt={4}>
                 <Typography variant="h2" gutterBottom>Welcome to the Job Portal</Typography>
                 <Typography variant="h6" color="textSecondary" paragraph>
@@ -95,6 +99,7 @@ function Home() {
                 </Grid>
             </Box>
         </Container>
+            </>
     )
 }
 export default Home

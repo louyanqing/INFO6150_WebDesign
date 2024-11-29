@@ -23,7 +23,7 @@ This project is a Job Portal built using React, Material UI (optional), and Axio
 
 ## Structure
 <pre>
-week9_assmt_jobPortal               
+week10_assmt_jobPortal               
 ├─ backend                          
 │  ├─ controllers                   
 │  │  ├─ authController.js          # Handles authentication-related logic

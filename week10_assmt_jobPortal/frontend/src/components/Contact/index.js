@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, Button, Typography, Box } from '@mui/material'
 import './contact.css'
+import Navbar from "../Navbar";
 function Contact() {
 
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -16,6 +17,8 @@ function Contact() {
     }
 
     return (
+        <>
+            <Navbar/>
         <div className="contact-container">
             <Box className="contact-box" display="flex" flexDirection="column" alignItems="center" mt={4}>
                 <Typography variant="h4" gutterBottom>Contact Us</Typography>
@@ -50,6 +53,7 @@ function Contact() {
                 </Button>
             </Box>
         </div>
+        </>
     )
 }
 
